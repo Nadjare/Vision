@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadjare Group - Né pour Aider</title>
+    <style>
+        :root {
+            --primary-color: #1a5276;
+            --secondary-color: #d4ac0d;
+            --accent-color: #229954;
+            --light-color: #f8f9fa;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --light-text: #fff;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --arabic-font: 'Traditional Arabic', 'Scheherazade', serif;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-main); line-height: 1.6; color: var(--text-color); background-color: var(--light-color); }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+        .bismillah-section { background-color: var(--primary-color); color: var(--light-text); text-align: center; padding: 20px 0; font-family: var(--arabic-font); font-size: 2.5rem; direction: rtl; }
+
+        header { background-color: var(--primary-color); color: var(--light-text); padding: 1rem 0; position: sticky; width: 100%; top: 0; z-index: 1000; box-shadow: var(--shadow); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; }
+        .logo-icon { margin-right: 10px; font-size: 2rem; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 1.5rem; }
+        nav ul li a { color: var(--light-text); text-decoration: none; font-weight: 500; transition: var(--transition); padding: 5px 10px; border-radius: 4px; }
+        nav ul li a:hover { background-color: rgba(255, 255, 255, 0.1); }
+        .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
+
+        .hero { background: linear-gradient(rgba(26, 82, 118, 0.8), rgba(26, 82, 118, 0.9)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; color: var(--light-text); text-align: center; padding: 150px 0 100px; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); }
+        .hero .slogan { font-size: 2rem; margin-bottom: 1.5rem; color: var(--secondary-color); font-weight: bold; }
+        .hero p { font-size: 1.5rem; max-width: 800px; margin: 0 auto 2rem; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); }
+        .cta-button { display: inline-block; background-color: var(--secondary-color); color: var(--dark-color); padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: var(--transition); box-shadow: var(--shadow); }
+        .cta-button:hover { background-color: #f1c40f; transform: translateY(-3px); }
+
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 3rem; position: relative; }
+        .section-title h2 { font-size: 2.5rem; color: var(--primary-color); display: inline-block; padding-bottom: 10px; }
+        .section-title h2:after { content: ''; position: absolute; width: 80px; height: 3px; background-color: var(--secondary-color); bottom: 0; left: 50%; transform: translateX(-50%); }
+
+        .vision-content { max-width: 900px; margin: 0 auto; text-align: center; }
+        .vision-quote { font-size: 1.8rem; font-style: italic; color: var(--primary-color); margin-bottom: 2rem; padding: 20px; border-left: 4px solid var(--secondary-color); background-color: rgba(212, 172, 13, 0.1); }
+        .vision-text { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; }
+
+        .mission { background-color: #f5f5f5; }
+        .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .mission-card { background-color: white; padding: 30px; border-radius: 8px; box-shadow: var(--shadow); transition: var(--transition); text-align: center; }
+        .mission-card:hover { transform: translateY(-10px); }
+        .mission-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
+        .mission-card h3 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.5rem; }
+
+        .timeline { position: relative; max-width: 1200px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 6px; background-color: var(--primary-color); top: 0; bottom: 0; left: 50%; margin-left: -3px; }
+        .timeline-item { padding: 10px 40px; position: relative; width: 50%; box-sizing: border-box; }
+        .timeline-item:nth-child(odd) { left: 0; }
+        .timeline-item:nth-child(even) { left: 50%; }
+        .timeline-content { padding: 20px 30px; background-color: white; position: relative; border-radius: 6px; box-shadow: var(--shadow); }
+        .timeline-item:nth-child(odd) .timeline-content::after { content: ''; position: absolute; width: 20px; height: 20px; right: -10px; background-color: white; top: 20px; border-radius: 50%; z-index: 1; box-shadow: 0 0 0 4px var(--primary-color); }
+        .timeline-item:nth-child(even) .timeline-content::after { content: ''; position: absolute; width: 20px; height: 20px; left: -10px; background-color: white; top: 20px; border-radius: 50%; z-index: 1; box-shadow: 0 0 0 4px var(--primary-color); }
+        .timeline-year { font-weight: bold; color: var(--primary-color); font-size: 1.2rem; margin-bottom: 10px; }
+
+        .values { background-color: var(--primary-color); color: var(--light-text); }
+        .values .section-title h2 { color: var(--light-text); }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .value-card { text-align: center; padding: 30px 20px; background-color: rgba(255, 255, 255, 0.1); border-radius: 8px; transition: var(--transition); }
+        .value-card:hover { background-color: rgba(255, 255, 255, 0.2); transform: translateY(-5px); }
+        .value-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--secondary-color); }
+        .value-card h3 { margin-bottom: 1rem; font-size: 1.3rem; }
+
+        .aider-section { background: linear-gradient(rgba(212, 172, 13, 0.9), rgba(212, 172, 13, 0.8)); color: var(--dark-color); text-align: center; padding: 60px 0; }
+        .aider-section h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .aider-section p { font-size: 1.3rem; max-width: 800px; margin: 0 auto; }
+
+        footer { background-color: var(--dark-color); color: var(--light-text); padding: 60px 0 30px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-column h3 { color: var(--secondary-color); margin-bottom: 1.5rem; font-size: 1.3rem; }
+        .footer-column p, .footer-column a { color: #ddd; margin-bottom: 10px; display: block; text-decoration: none; transition: var(--transition); }
+        .footer-column a:hover { color: var(--secondary-color); padding-left: 5px; }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #aaa; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .bismillah-section { font-size: 1.8rem; padding: 15px 0; }
+            .header-content { flex-direction: column; text-align: center; }
+            nav ul { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
+            nav ul li { margin: 0 10px 10px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero .slogan { font-size: 1.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .timeline::after { left: 31px; }
+            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+            .timeline-item:nth-child(even) { left: 0; }
+            .timeline-item:nth-child(odd) .timeline-content::after, .timeline-item:nth-child(even) .timeline-content::after { left: 21px; right: auto; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bismillah-section">
+        <div class="container">
+            <p>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
+        </div>
+    </div>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🌍</span>
+                <span>Nadjare Group</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#mission">Mission</a></li>
+                    <li><a href="#timeline">Étapes</a></li>
+                    <li><a href="#values">Valeurs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Nadjare Group</h1>
+            <div class="slogan">Né pour Aider</div>
+            <p>"Je veux réussir pour aider, pas pour briller."</p>
+            <a href="#vision" class="cta-button">Découvrir notre vision</a>
+        </div>
+    </section>
+
+    <section id="vision">
+        <div class="container">
+            <div class="section-title"><h2>Notre Vision</h2></div>
+            <div class="vision-content">
+                <blockquote class="vision-quote">"Je ne veux plus dire non à celui qui a besoin."</blockquote>
+                <p class="vision-text"><strong>Nadjare Group</strong> n'est pas juste un projet d'entreprise – c'est un <strong>rêve né de la compassion</strong>.</p>
+                <p class="vision-text">Le but principal : <strong>Aider de toutes mes forces, pour qu'aucun cœur autour de moi ne souffre du manque.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="aider-section">
+        <div class="container">
+            <h2>Notre Raison d'Être : Aider</h2>
+            <p>Chaque projet au sein de Nadjare Group a un seul but : aider ceux qui en ont besoin. Le succès se mesure par le nombre de vies améliorées.</p>
+        </div>
+    </section>
+
+    <section id="mission" class="mission">
+        <div class="container">
+            <div class="section-title"><h2>Notre Mission</h2></div>
+            <div class="mission-grid">
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-laptop-code"></i></div><h3>Technologie</h3><p>Sites web et services réseaux pour soutenir les petites entreprises.</p></div>
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-map-marked-alt"></i></div><h3>Tourisme</h3><p>Mada Royale Trip - circuits touristiques uniques pour découvrir Madagascar.</p></div>
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-egg"></i></div><h3>Agriculture</h3><p>Nadjare Poul'Tech - poulailler et livraisons pour une alimentation saine.</p></div>
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-hotel"></i></div><h3>Hôtellerie</h3><p>Hôtel accueillant les touristes avec confort et hospitalité, générant des emplois locaux.</p></div>
+                <div class="mission-card"><div class="mission-icon"><i class="fas fa-book-open"></i></div><h3>Développement personnel</h3><p>Étude du Coran, apprentissage des langues et discipline pour former des individus épanouis.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="values" class="values">
+        <div class="container">
+            <div class="section-title"><h2>Nos Valeurs Humaines</h2></div>
+            <div class="values-grid">
+                <div class="value-card"><div class="value-icon"><i class="fas fa-heart"></i></div><h3>Compassion</h3><p>Aider sans attendre en retour.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-pray"></i></div><h3>Foi</h3><p>Confiance en Dieu dans chaque pas.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-hands-helping"></i></div><h3>Travail</h3><p>Réussir par l'effort, apprendre toujours.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-share-alt"></i></div><h3>Partage</h3><p>Donner sans limites.</p></div>
+                <div class="value-card"><div class="value-icon"><i class="fas fa-seedling"></i></div><h3>Espoir</h3><p>Gardez espoir même dans les moments difficiles.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Nadjare Group</h3>
+                    <p>"Né pour Aider"</p>
+                    <p>Je veux réussir pour aider, pas pour briller.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:hajahabibeabdou@gmail.com">hajahabibeabdou@gmail.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="https://wa.me/261323962286" target="_blank">+261 32 39 622 86 (WhatsApp)</a></p>
+                    <p><i class="fab fa-facebook"></i> <a href="https://facebook.com/HajaNadjare" target="_blank">Haja Nadjare</a></p>
+               
