@@ -19,6 +19,35 @@
             --transition: all 0.3s ease;
         }
 
+        .photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.photo-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: var(--font-main); line-height: 1.6; color: var(--text-color); background-color: var(--light-color); }
         .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
@@ -120,10 +149,10 @@
             <nav>
                 <ul>
                     <li><a href="#vision">Vision</a></li>
-                    <li><a href="#mission">But</a></li>
+                    <li><a href="#mission">Ce que je veux construit</a></li>
                     <li><a href="#values">Valeurs</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://nadjare.github.io/Vision/">Mon cv </a></li>
+                    <li><a href="https://nadjare.github.io/cv/">Mon cv </a></li>
                 </ul>
             </nav>
         </div>
@@ -153,35 +182,71 @@
 </section>
 
 
-    <section class="aider-section">
-        <div class="container">
-            <h2>La Raison d'Être de Nadjare Group : Aider</h2>
-            <p>Chaque projet au sein de Nadjare Group a un seul but : aider ceux qui en ont besoin. Le succès se mesure par le nombre de vies améliorées.</p>
+<section class="aider-section">
+    <div class="container">
+        <h2>La Raison d'Être de Nadjare Group : Aider</h2>
+        <p>Chaque projet au sein de Nadjare Group a un seul but : aider ceux qui en ont besoin. Le succès se mesure par le nombre de vies améliorées.</p>
+        <p><p>Mon objectif : transformer les personnes sur cette photo en une équipe prospère et accomplie.</p>
+
+
+        <div class="photo-gallery">
+            <div class="photo-card">
+                <img src="photo1.jpg" alt="Groupe 1">
+            </div>
+            <div class="photo-card">
+                <img src="photo2.jpg" alt="Groupe 2">
+            </div>
+            <div class="photo-card">
+                <img src="photo3.jpg" alt="Groupe 3">
+            </div>
+            <div class="photo-card">
+                <img src="photo4.jpg" alt="Groupe 4">
+            </div>
+            <div class="photo-card">
+                <img src="photo5.jpg" alt="Groupe 1">
+            </div>
+            <div class="photo-card">
+                <img src="photo6.jpg" alt="Groupe 2">
+            </div>
+            <div class="photo-card">
+                <img src="photo7.jpg" alt="Groupe 3">
+            </div>
+            <div class="photo-card">
+                <img src="photo8.jpg" alt="Groupe 4">
+            </div><div class="photo-card">
+                <img src="photo9.jpg" alt="Groupe 3">
+            </div>
+            <div class="photo-card">
+                <img src="photo10.jpg" alt="Groupe 4">
+            </div>
         </div>
-    </section>
+    </div>
+</section><p>Une des raisons d'être : accompagner mon équipe d'amis de longue date pour qu'ensemble nous réussissions et prospérions.</p>
+
+
 
   <section id="vision-goals" class="mission">
     <div class="container">
-        <div class="section-title"><h2>But de ma Vision</h2></div>
+        <div class="section-title"><h2>Mes projet</h2></div>
         <div class="mission-grid">
             <div class="mission-card">
                 <div class="mission-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3>Technologie</h3>
+                <h3>Technologie → Nadjare Tech/h3>
                 <p>Je veux créer des sites web et des services réseaux pour soutenir les petites entreprises et aider les entrepreneurs à réussir.</p>
             </div>
             <div class="mission-card">
                 <div class="mission-icon"><i class="fas fa-map-marked-alt"></i></div>
-                <h3>Tourisme</h3>
+                <h3>Tourisme → Mada Royale Trip</h3>
                 <p>Je veux développer Mada Royale Trip pour offrir des circuits touristiques uniques et faire découvrir Madagascar de manière authentique.</p>
             </div>
             <div class="mission-card">
                 <div class="mission-icon"><i class="fas fa-egg"></i></div>
-                <h3>Agriculture</h3>
+                <h3>Agriculture → Nadjare Poul’Tech</h3>
                 <p>Je veux gérer Nadjare Poul'Tech avec un poulailler et des livraisons locales pour offrir une alimentation saine et accessible.</p>
             </div>
             <div class="mission-card">
                 <div class="mission-icon"><i class="fas fa-hotel"></i></div>
-                <h3>Hôtellerie</h3>
+                <h3>Hôtellerie → Nadjare Lodge</h3>
                 <p>Je veux créer un hôtel accueillant les touristes avec confort et hospitalité, tout en générant des emplois locaux.</p>
             </div>
             <div class="mission-card">
