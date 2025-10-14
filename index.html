@@ -5,7 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nadjare Group - Né pour Aider</title>
         <style>
-        /* ===== Variables CSS ===== */
+        /* Adaptation mobile */
+@media (max-width: 768px) {
+    .diamond-network {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .node {
+        width: 100px;
+        height: 100px;
+    }
+
+    .node i {
+        font-size: 1.4rem;
+    }
+
+    .node span {
+        font-size: 0.9rem;
+    }
+
+    .center-node {
+        width: 120px;
+        height: 120px;
+        font-size: 1rem;
+    }
+
+    /* Réorganisation des positions pour petit écran */
+    .node.dev { top: 10%; left: 50%; transform: translate(-50%, -50%); }
+    .node.tech { top: 30%; left: 50%; transform: translate(-50%, -50%); }
+    .node.agri { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+    .node.tour { top: 70%; left: 50%; transform: translate(-50%, -50%); }
+    .node.hotel { top: 90%; left: 50%; transform: translate(-50%, -50%); }
+}
+/* ===== Variables CSS ===== */
         :root {
             --primary-color: #1a5276;
             --secondary-color: #d4ac0d;
