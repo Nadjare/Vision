@@ -86,6 +86,52 @@
     margin-right: 8px;
     border-radius: 50%;
 }
+.circle-network {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 50px auto;
+}
+
+.circle-network .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #fff;
+    background: #ff4d4d;
+    border-radius: 50%;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.circle-network .node {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.node span {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* Position des noeuds en cercle */
+.node.tech { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.node.tour { top: 50%; right: 0; transform: translate(50%, -50%); }
+.node.agri { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.node.hotel { top: 50%; left: 0; transform: translate(-50%, -50%); }
+.node.dev { top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -290,6 +336,21 @@
         </div>
     </div>
 </section>
+
+    <section class="nadjare-summary">
+    <div class="container">
+        <h2>Nadjare Group – Cercle Vertueux</h2>
+        <div class="circle-network">
+            <div class="center">Nadjare Group</div>
+            <div class="node tech"><i class="fas fa-laptop-code"></i><span>Technologie</span></div>
+            <div class="node tour"><i class="fas fa-map-marked-alt"></i><span>Mada Royale Trip</span></div>
+            <div class="node agri"><i class="fas fa-egg"></i><span>Poul'Tech</span></div>
+            <div class="node hotel"><i class="fas fa-hotel"></i><span>Nadjare Lodge</span></div>
+            <div class="node dev"><i class="fas fa-book-open"></i><span>Développement personnel</span></div>
+        </div>
+    </div>
+</section>
+
 
 
     <section id="values" class="values">
