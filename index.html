@@ -108,6 +108,7 @@
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     text-align: center;
     transition: transform 0.3s;
+    z-index: 2; /* Pour que les noeuds soient au-dessus des flèches */
 }
 
 .node:hover {
@@ -148,14 +149,21 @@
     font-size: 1.1rem;
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    z-index: 3; /* Toujours au-dessus de tous */
 }
 
 .arrows {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 1;
+    z-index: 1; /* Les flèches derrière les noeuds */
 }
+
+/* Optionnel : petite animation sur les flèches si tu veux */
+.arrows line {
+    stroke-dasharray: 5, 5;
+}
+
 
 
         
