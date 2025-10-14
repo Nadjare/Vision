@@ -85,29 +85,28 @@
     vertical-align: middle;
     margin-right: 8px;
     border-radius: 50%;
-}
-.circle-network {
+}.circle-network {
     position: relative;
     width: 400px;
     height: 400px;
     margin: 50px auto;
 }
 
-.circle-network .center {
+.center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #fff;
     background: #ff4d4d;
+    color: #fff;
     border-radius: 50%;
-    padding: 20px 30px;
+    padding: 20px;
+    font-weight: bold;
     text-align: center;
+    z-index: 10;
 }
 
-.circle-network .node {
+.node {
     position: absolute;
     width: 100px;
     height: 100px;
@@ -117,8 +116,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     text-align: center;
+}
+
+.node i {
+    font-size: 1.5rem;
+    color: #ff4d4d;
 }
 
 .node span {
@@ -126,12 +130,19 @@
     font-size: 0.9rem;
 }
 
-/* Position des noeuds en cercle */
+/* Positions des noeuds autour du centre */
 .node.tech { top: 0; left: 50%; transform: translate(-50%, -50%); }
 .node.tour { top: 50%; right: 0; transform: translate(50%, -50%); }
 .node.agri { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
 .node.hotel { top: 50%; left: 0; transform: translate(-50%, -50%); }
-.node.dev { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.node.dev { top: 20%; left: 70%; transform: translate(-50%, -50%); }
+
+.arrows {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -337,16 +348,52 @@
     </div>
 </section>
 
-    <section class="nadjare-summary">
+    <section class="nadjare-network">
     <div class="container">
         <h2>Nadjare Group – Cercle Vertueux</h2>
         <div class="circle-network">
             <div class="center">Nadjare Group</div>
-            <div class="node tech"><i class="fas fa-laptop-code"></i><span>Technologie</span></div>
-            <div class="node tour"><i class="fas fa-map-marked-alt"></i><span>Mada Royale Trip</span></div>
-            <div class="node agri"><i class="fas fa-egg"></i><span>Poul'Tech</span></div>
-            <div class="node hotel"><i class="fas fa-hotel"></i><span>Nadjare Lodge</span></div>
-            <div class="node dev"><i class="fas fa-book-open"></i><span>Développement personnel</span></div>
+
+            <div class="node tech">
+                <i class="fas fa-laptop-code"></i>
+                <span>Technologie</span>
+            </div>
+
+            <div class="node tour">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Mada Royale Trip</span>
+            </div>
+
+            <div class="node agri">
+                <i class="fas fa-egg"></i>
+                <span>Poul'Tech</span>
+            </div>
+
+            <div class="node hotel">
+                <i class="fas fa-hotel"></i>
+                <span>Nadjare Lodge</span>
+            </div>
+
+            <div class="node dev">
+                <i class="fas fa-book-open"></i>
+                <span>Développement personnel</span>
+            </div>
+
+            <!-- Flèches -->
+            <svg class="arrows" width="400" height="400">
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+                            refX="0" refY="3.5" orient="auto">
+                        <polygon points="0 0, 10 3.5, 0 7" fill="#ff4d4d"/>
+                    </marker>
+                </defs>
+                <!-- Ligne centrale vers chaque projet -->
+                <line x1="200" y1="200" x2="200" y2="50" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="200" y1="200" x2="350" y2="200" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="200" y1="200" x2="200" y2="350" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="200" y1="200" x2="50" y2="200" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="200" y1="200" x2="300" y2="60" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+            </svg>
         </div>
     </div>
 </section>
