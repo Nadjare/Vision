@@ -85,57 +85,70 @@
     vertical-align: middle;
     margin-right: 8px;
     border-radius: 50%;
-}.circle-network {
+.diamond-network {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     margin: 50px auto;
-}
-
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #ff4d4d;
-    color: #fff;
-    border-radius: 50%;
+    background: linear-gradient(135deg, #ffe066, #ff6b6b); /* Fond coloré attrayant */
+    border-radius: 20px;
     padding: 20px;
-    font-weight: bold;
-    text-align: center;
-    z-index: 10;
 }
 
 .node {
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     background: #fff;
     border-radius: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     text-align: center;
+    transition: transform 0.3s;
+}
+
+.node:hover {
+    transform: scale(1.1);
 }
 
 .node i {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #ff4d4d;
 }
 
 .node span {
     margin-top: 5px;
-    font-size: 0.9rem;
+    font-weight: bold;
 }
 
-/* Positions des noeuds autour du centre */
-.node.tech { top: 0; left: 50%; transform: translate(-50%, -50%); }
-.node.tour { top: 50%; right: 0; transform: translate(50%, -50%); }
-.node.agri { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
-.node.hotel { top: 50%; left: 0; transform: translate(-50%, -50%); }
-.node.dev { top: 20%; left: 70%; transform: translate(-50%, -50%); }
+/* Positions losange */
+.node.dev { top: 20px; left: 50%; transform: translateX(-50%); }
+.node.tech { top: 150px; left: 70%; transform: translateX(-50%); }
+.node.agri { top: 400px; left: 70%; transform: translateX(-50%); }
+.node.tour { top: 400px; left: 30%; transform: translateX(-50%); }
+.node.hotel { top: 150px; left: 30%; transform: translateX(-50%); }
+
+/* Noeud central */
+.center-node {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ff4d4d;
+    color: #fff;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
 
 .arrows {
     position: absolute;
@@ -143,6 +156,7 @@
     left: 0;
     z-index: 1;
 }
+
 
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -348,55 +362,57 @@
     </div>
 </section>
 
-    <section class="nadjare-network">
+    <section class="nadjare-diamond">
     <div class="container">
-        <h2>Nadjare Group – Cercle Vertueux</h2>
-        <div class="circle-network">
-            <div class="center">Nadjare Group</div>
+        <h2 style="text-align:center; color:#ff4d4d;">Nadjare Group – Cercle Vertueux</h2>
+        <div class="diamond-network">
 
+            <!-- Noeuds -->
+            <div class="node dev">
+                <i class="fas fa-book-open"></i>
+                <span>Développement personnel</span>
+            </div>
             <div class="node tech">
                 <i class="fas fa-laptop-code"></i>
-                <span>Technologie</span>
+                <span>Nadjare Tech</span>
             </div>
-
-            <div class="node tour">
-                <i class="fas fa-map-marked-alt"></i>
-                <span>Mada Royale Trip</span>
-            </div>
-
             <div class="node agri">
                 <i class="fas fa-egg"></i>
                 <span>Poul'Tech</span>
             </div>
-
+            <div class="node tour">
+                <i class="fas fa-map-marked-alt"></i>
+                <span>Mada Royale Trip</span>
+            </div>
             <div class="node hotel">
                 <i class="fas fa-hotel"></i>
                 <span>Nadjare Lodge</span>
             </div>
 
-            <div class="node dev">
-                <i class="fas fa-book-open"></i>
-                <span>Développement personnel</span>
+            <!-- Centre -->
+            <div class="center-node">
+                <h3>Nadjare Group</h3>
             </div>
 
             <!-- Flèches -->
-            <svg class="arrows" width="400" height="400">
+            <svg class="arrows" width="600" height="600">
                 <defs>
                     <marker id="arrowhead" markerWidth="10" markerHeight="7"
                             refX="0" refY="3.5" orient="auto">
                         <polygon points="0 0, 10 3.5, 0 7" fill="#ff4d4d"/>
                     </marker>
                 </defs>
-                <!-- Ligne centrale vers chaque projet -->
-                <line x1="200" y1="200" x2="200" y2="50" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <line x1="200" y1="200" x2="350" y2="200" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <line x1="200" y1="200" x2="200" y2="350" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <line x1="200" y1="200" x2="50" y2="200" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <line x1="200" y1="200" x2="300" y2="60" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="100" y1="500" x2="300" y2="300" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="300" y1="300" x2="500" y2="500" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="500" y1="500" x2="300" y2="100" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="300" y1="100" x2="100" y2="100" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <line x1="100" y1="100" x2="100" y2="500" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
             </svg>
+
         </div>
     </div>
 </section>
+
 
 
 
