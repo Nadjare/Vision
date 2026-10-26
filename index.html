@@ -39,7 +39,7 @@
       background-color: #fbeef0;
     }
 
-    /* la photo en fond, fixe et couvrante */
+    /* 👇 TA PHOTO EN FOND — remplace TA_PHOTO.jpg par ton vrai fichier */
     .bg-photo {
       position: fixed;
       inset: 0;
@@ -48,7 +48,6 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      /* si la photo manque : dégradé de secours crème/rose */
       background-color: #fbeef0;
     }
 
@@ -59,13 +58,13 @@
       z-index: -1;
       background:
         linear-gradient(180deg,
-          rgba(253, 248, 237, 0.82) 0%,
-          rgba(251, 238, 240, 0.78) 35%,
-          rgba(246, 224, 228, 0.80) 70%,
-          rgba(253, 248, 237, 0.88) 100%
+          rgba(253, 248, 237, 0.80) 0%,
+          rgba(251, 238, 240, 0.76) 35%,
+          rgba(246, 224, 228, 0.78) 70%,
+          rgba(253, 248, 237, 0.86) 100%
         ),
-        radial-gradient(circle at 20% 15%, rgba(255, 228, 232, 0.55), transparent 50%),
-        radial-gradient(circle at 85% 90%, rgba(190, 214, 178, 0.35), transparent 55%);
+        radial-gradient(circle at 20% 15%, rgba(255, 228, 232, 0.5), transparent 50%),
+        radial-gradient(circle at 85% 90%, rgba(190, 214, 178, 0.3), transparent 55%);
       backdrop-filter: blur(1.5px);
       -webkit-backdrop-filter: blur(1.5px);
     }
@@ -87,7 +86,6 @@
       margin: auto 0;
     }
 
-    /* halo décoratif rose/vert */
     .card::before {
       content: "";
       position: absolute;
@@ -109,6 +107,52 @@
       opacity: 0.22;
       transform: rotate(18deg);
       pointer-events: none;
+    }
+
+    /* ===== CADRE PHOTO EN HAUT DE LA CARTE ===== */
+    .photo-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      padding: 5px;
+      background: conic-gradient(from 210deg, #c96b82, #e8b4c0, #f6d5dc, #c96b82);
+      box-shadow:
+        0 12px 28px rgba(90, 50, 60, 0.22),
+        0 4px 10px rgba(90, 50, 60, 0.12);
+      animation: halo 6s ease-in-out infinite;
+    }
+
+    /* 👇 TA PHOTO AUSSI ICI (même fichier) */
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 3px solid #fffdf9;
+      background: #fbe3e8;
+    }
+
+    .photo-frame .fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 3px solid #fffdf9;
+      background: linear-gradient(135deg, #fbe3e8, #dbe8d2);
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: #c96b82;
     }
 
     /* ===== EN-TÊTE ===== */
@@ -178,7 +222,6 @@
     .stickers span:nth-child(2) { animation-delay: 0.4s; }
     .stickers span:nth-child(3) { animation-delay: 0.9s; }
     .stickers span:nth-child(4) { animation-delay: 0.2s; }
-    .stickers span:nth-child(5) { animation-delay: 1.2s; }
 
     /* ===== MESSAGE ===== */
     .message {
@@ -285,11 +328,10 @@
       100% { transform: rotate(0deg); }
     }
 
-    .tiny-heart {
-      color: #c96b82;
-      opacity: 0.8;
-      font-size: 0.85rem;
-      margin-left: 2px;
+    @keyframes halo {
+      0% { box-shadow: 0 12px 28px rgba(90, 50, 60, 0.22), 0 0 0 0 rgba(201, 107, 130, 0.35); }
+      50% { box-shadow: 0 12px 32px rgba(90, 50, 60, 0.26), 0 0 0 10px rgba(201, 107, 130, 0); }
+      100% { box-shadow: 0 12px 28px rgba(90, 50, 60, 0.22), 0 0 0 0 rgba(201, 107, 130, 0); }
     }
 
     .greeting {
@@ -326,6 +368,11 @@
         font-size: 1.8rem;
         top: 12px;
         right: 14px;
+      }
+
+      .photo-frame {
+        width: 100px;
+        height: 100px;
       }
 
       .header {
@@ -391,6 +438,11 @@
         border-radius: 28px 28px 24px 24px;
       }
 
+      .photo-frame {
+        width: 88px;
+        height: 88px;
+      }
+
       .header h1 {
         font-size: 1.6rem;
       }
@@ -426,11 +478,23 @@
 </head>
 <body>
 
-  <!-- ===== PHOTO EN ARRIÈRE-PLAN PLEIN ÉCRAN (remplace TA_PHOTO.jpg) ===== -->
+  <!-- ===== TA PHOTO EN ARRIÈRE-PLAN PLEIN ÉCRAN ===== -->
   <div class="bg-photo" aria-hidden="true"></div>
   <div class="bg-overlay" aria-hidden="true"></div>
 
   <div class="card">
+
+    <!-- ===== TA PHOTO AUSSI DANS LE CADRE ROND ===== -->
+    <div class="photo-wrap">
+      <div class="photo-frame">
+        <img
+          src="TA_PHOTO.jpg"
+          alt="Photo de Nadjare"
+          onerror="this.style.display='none'; this.parentElement.querySelector('.fallback').style.display='flex';"
+        >
+        <div class="fallback">😊</div>
+      </div>
+    </div>
 
     <!-- En-tête -->
     <div class="header">
@@ -438,17 +502,16 @@
         <span>😊</span> Hey, toi !
       </h1>
       <div class="signature">
-        <span>🌷</span> Nadjare <span class="tiny-heart">♡</span>
+        <span>🌷</span> Nadjare
       </div>
     </div>
 
-    <!-- Stickers -->
+    <!-- Stickers (sans cœurs) -->
     <div class="stickers">
       <span>💻</span>
       <span>✨</span>
       <span>🌱</span>
       <span>😅</span>
-      <span>❤️</span>
     </div>
 
     <!-- Message -->
@@ -461,7 +524,7 @@
       </p>
 
       <p>
-        Eh bien, disons que je suis un gars qui aime l'informatique 💻. Alors, quand j'ai quelque chose à dire, pourquoi ne pas utiliser ce que je sais faire le mieux ? Kkkkk 😅❤️
+        Eh bien, disons que je suis un gars qui aime l'informatique 💻. Alors, quand j'ai quelque chose à dire, pourquoi ne pas utiliser ce que je sais faire le mieux ? Kkkkk 😅
       </p>
 
       <p>
@@ -495,7 +558,7 @@
 
     <div class="ps">
       <span class="dev-badge">💻 P.-S.</span>
-      J'espère que tu apprécies mon petit travail de développeur. J'ai peut-être un peu trop réfléchi avant de cliquer sur « envoyer ». Kkkkk 😂💻❤️
+      J'espère que tu apprécies mon petit travail de développeur. J'ai peut-être un peu trop réfléchi avant de cliquer sur « envoyer ». Kkkkk 😂💻
     </div>
 
     <div style="margin-top: 0.9rem; font-size: 0.7rem; color: #b9a0a8; text-align: right; opacity: 0.75;">
