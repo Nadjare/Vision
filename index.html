@@ -1,532 +1,506 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nadjare Group - Né pour Aider</title>
-        <style>
-        /* Adaptation mobile */
-@media (max-width: 768px) {
-    .diamond-network {
-        width: 100%;
-        height: auto;
-        padding: 10px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="theme-color" content="#fbeef0">
+  <title>Un petit message pour toi 🌷</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="1.jpg" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .node {
-        width: 100px;
-        height: 100px;
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
     }
 
-    .node i {
-        font-size: 1.4rem;
-    }
-
-    .node span {
-        font-size: 0.9rem;
-    }
-
-    .center-node {
-        width: 120px;
-        height: 120px;
-        font-size: 1rem;
-    }
-
-    /* Réorganisation des positions pour petit écran */
-    .node.dev { top: 10%; left: 50%; transform: translate(-50%, -50%); }
-    .node.tech { top: 30%; left: 50%; transform: translate(-50%, -50%); }
-    .node.agri { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-    .node.tour { top: 70%; left: 50%; transform: translate(-50%, -50%); }
-    .node.hotel { top: 90%; left: 50%; transform: translate(-50%, -50%); }
-}
-/* ===== Variables CSS ===== */
-        :root {
-            --primary-color: #1a5276;
-            --secondary-color: #d4ac0d;
-            --accent-color: #229954;
-            --light-color: #f8f9fa;
-            --dark-color: #2c3e50;
-            --text-color: #333;
-            --light-text: #fff;
-            --shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            --transition: all 0.3s ease;
-            --radius: 12px;
-            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            --arabic-font: 'Traditional Arabic', 'Scheherazade', serif;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: var(--font-main); color: var(--text-color); background-color: var(--light-color); line-height: 1.6; }
-        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
-
-        /* ===== Section Bismillah ===== */
-        .bismillah-section {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            text-align: center;
-            padding: 20px 0;
-            font-family: var(--arabic-font);
-            font-size: 2.5rem;
-            direction: rtl;
-        }
-
-        /* ===== Header ===== */
-        header {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-        }
-        .header-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { font-size: 1.8rem; font-weight: bold; display: flex; align-items: center; }
-        .logo-icon { margin-right: 10px; font-size: 2rem; }
-        nav ul { display: flex; list-style: none; flex-wrap: wrap; }
-        nav ul li { margin-left: 1.5rem; }
-        nav ul li a { color: var(--light-text); text-decoration: none; font-weight: 500; transition: var(--transition); padding: 5px 10px; border-radius: 4px; }
-        nav ul li a:hover { background-color: rgba(255,255,255,0.1); }
-
-        /* ===== Hero Section ===== */
-        .hero {
-            background: linear-gradient(rgba(26, 82, 118, 0.85), rgba(26, 82, 118, 0.85)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            color: var(--light-text);
-            text-align: center;
-            padding: 150px 0 100px;
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero .slogan { font-size: 2rem; margin-bottom: 1.5rem; color: var(--secondary-color); font-weight: bold; }
-        .hero p { font-size: 1.5rem; max-width: 800px; margin: 0 auto 2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-        .cta-button { display: inline-block; background-color: var(--secondary-color); color: var(--dark-color); padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: var(--transition); box-shadow: var(--shadow); }
-        .cta-button:hover { background-color: #f1c40f; transform: translateY(-3px); }
-
-        /* ===== Section Titles ===== */
-        section { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 3rem; position: relative; }
-        .section-title h2 { font-size: 2.5rem; color: var(--primary-color); display: inline-block; padding-bottom: 10px; }
-        .section-title h2:after { content: ''; position: absolute; width: 80px; height: 3px; background-color: var(--secondary-color); bottom: 0; left: 50%; transform: translateX(-50%); }
-
-        /* ===== Vision Section ===== */
-        .vision-content { max-width: 900px; margin: 0 auto; text-align: center; }
-        .vision-quote { font-size: 1.8rem; font-style: italic; color: var(--primary-color); margin-bottom: 2rem; padding: 20px; border-left: 4px solid var(--secondary-color); background-color: rgba(212, 172, 13, 0.1); }
-        .vision-text { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; }
-        .vision-text.arabic { font-family: var(--arabic-font); font-size: 1.5rem; direction: rtl; margin-top: 20px; text-align: center; }
-
-        /* ===== Mission Section ===== */
-        .mission { background-color: #f5f5f5; }
-        .mission-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .mission-card { background-color: white; padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow); transition: var(--transition); text-align: center; }
-        .mission-card:hover { transform: translateY(-10px); }
-        .mission-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; }
-        .mission-card h3 { color: var(--primary-color); margin-bottom: 1rem; font-size: 1.5rem; }
-
-        /* ===== Diamond Network ===== */
-        .diamond-network {
-            position: relative;
-            width: 600px;
-            height: 600px;
-            margin: 50px auto;
-            background: linear-gradient(135deg, #ffe066, #ff6b6b);
-            border-radius: 20px;
-            padding: 20px;
-        }
-        .node {
-            position: absolute;
-            width: 130px;
-            height: 130px;
-            background: #fff;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            text-align: center;
-            transition: transform 0.3s;
-            z-index: 2;
-        }
-        .node:hover { transform: scale(1.1); }
-        .node i { font-size: 1.8rem; color: #ff4d4d; }
-        .node span { margin-top: 5px; font-weight: bold; }
-        .node.dev { top: 20px; left: 50%; transform: translateX(-50%); }
-        .node.tech { top: 150px; left: 70%; transform: translateX(-50%); }
-        .node.agri { top: 400px; left: 70%; transform: translateX(-50%); }
-        .node.tour { top: 400px; left: 30%; transform: translateX(-50%); }
-        .node.hotel { top: 150px; left: 30%; transform: translateX(-50%); }
-        .center-node {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #ff4d4d;
-            color: #fff;
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-            z-index: 3;
-        }
-        .arrows { position: absolute; top: 0; left: 0; z-index: 1; }
-        .arrows line { stroke-dasharray: 5,5; stroke-width: 2; stroke: #ff4d4d; marker-end: url(#arrowhead); }
-
-        /* ===== Values Section ===== */
-        .values { background-color: var(--primary-color); color: var(--light-text); }
-        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .value-card { text-align: center; padding: 30px 20px; background-color: rgba(255,255,255,0.1); border-radius: var(--radius); transition: var(--transition); }
-        .value-card:hover { background-color: rgba(255,255,255,0.2); transform: translateY(-5px); }
-        .value-icon { font-size: 2.5rem; margin-bottom: 1rem; color: var(--secondary-color); }
-        .value-card h3 { margin-bottom: 1rem; font-size: 1.3rem; }
-
-        /* ===== Aider Section ===== */
-        .aider-section { background: linear-gradient(rgba(212, 172, 13, 0.9), rgba(212, 172, 13, 0.8)); color: var(--dark-color); text-align: center; padding: 60px 0; }
-        .aider-section h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .aider-section p { font-size: 1.3rem; max-width: 800px; margin: 0 auto 1rem; }
-
-        /* ===== Photo Gallery ===== */
-        .photo-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 30px; }
-        .photo-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; text-align: center; padding: 8px; border: 2px solid rgba(0,0,0,0.05); }
-        .photo-card img { width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius); transition: transform 0.3s, filter 0.3s; }
-        .photo-card:hover img { transform: scale(1.05); filter: brightness(1.05); }
-        .photo-card:hover { transform: translateY(-8px); box-shadow: 0 12px 20px rgba(0,0,0,0.2); border-color: rgba(0,0,0,0.1); }
-
-        /* ===== Footer ===== */
-        footer { background-color: var(--dark-color); color: var(--light-text); padding: 60px 0 30px; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px; }
-        .footer-column h3 { color: var(--secondary-color); margin-bottom: 1.5rem; font-size: 1.3rem; }
-        .footer-column p, .footer-column a { color: #ddd; margin-bottom: 10px; display: block; text-decoration: none; transition: var(--transition); }
-        .footer-column a:hover { color: var(--secondary-color); padding-left: 5px; }
-        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); color: #aaa; font-size: 0.9rem; }
-
-        /* ===== Responsive ===== */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero .slogan { font-size: 1.5rem; }
-            .hero p { font-size: 1.2rem; }
-            .timeline::after { left: 31px; }
-            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
-        }
-            /* ===== Optimisation responsive complète (mobile ≤ 768px) ===== */
-@media (max-width: 768px) {
-    /* Ajuste la taille du texte globale */
+    /* ===== PHOTO EN ARRIÈRE-PLAN PLEIN ÉCRAN ===== */
     body {
-        font-size: 16px;
-        line-height: 1.6;
+      font-family: 'Quicksand', 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      line-height: 1.6;
+      color: #1e3a2f;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1rem;
+      padding-top: max(1rem, env(safe-area-inset-top));
+      padding-bottom: max(1rem, env(safe-area-inset-bottom));
+      background-color: #fbeef0;
     }
 
-    /* --- Header et menu --- */
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    /* la photo en fond, fixe et couvrante */
+    .bg-photo {
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background-image: url('TA_PHOTO.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      /* si la photo manque : dégradé de secours crème/rose */
+      background-color: #fbeef0;
     }
 
-    nav ul {
-        flex-direction: column;
-        margin-top: 10px;
+    /* voile dégradé crème + rose par-dessus la photo pour la lisibilité */
+    .bg-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(180deg,
+          rgba(253, 248, 237, 0.82) 0%,
+          rgba(251, 238, 240, 0.78) 35%,
+          rgba(246, 224, 228, 0.80) 70%,
+          rgba(253, 248, 237, 0.88) 100%
+        ),
+        radial-gradient(circle at 20% 15%, rgba(255, 228, 232, 0.55), transparent 50%),
+        radial-gradient(circle at 85% 90%, rgba(190, 214, 178, 0.35), transparent 55%);
+      backdrop-filter: blur(1.5px);
+      -webkit-backdrop-filter: blur(1.5px);
     }
 
-    nav ul li {
-        margin: 8px 0;
+    /* ===== CARTE PRINCIPALE ===== */
+    .card {
+      max-width: 640px;
+      width: 100%;
+      background: linear-gradient(175deg, rgba(255, 253, 249, 0.94) 0%, rgba(253, 245, 246, 0.94) 100%);
+      border-radius: 44px 44px 36px 36px;
+      box-shadow:
+        0 24px 60px rgba(90, 50, 60, 0.16),
+        0 8px 20px rgba(90, 50, 60, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      padding: 1.6rem 1.6rem 2.2rem;
+      border: 1px solid rgba(240, 214, 219, 0.9);
+      position: relative;
+      overflow: hidden;
+      margin: auto 0;
     }
 
-    /* --- Hero Section --- */
-    .hero {
-        padding: 100px 20px 80px;
-        background-position: center;
+    /* halo décoratif rose/vert */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(247, 197, 206, 0.45), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    .card::after {
+      content: "🌷";
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 2.2rem;
+      opacity: 0.22;
+      transform: rotate(18deg);
+      pointer-events: none;
     }
 
-    .hero .slogan {
-        font-size: 1.3rem;
+    /* ===== EN-TÊTE ===== */
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .hero p {
-        font-size: 1rem;
-        padding: 0 10px;
+    .header h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #4a2733;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      line-height: 1.15;
     }
 
-    .cta-button {
-        padding: 10px 25px;
-        font-size: 1rem;
+    .header h1 span {
+      font-size: 1.9rem;
+      animation: float 3s infinite ease-in-out;
+      display: inline-block;
+      transform-origin: center;
     }
 
-    /* --- Vision & autres sections --- */
-    section {
-        padding: 50px 15px;
+    .signature {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #5c2e3c;
+      background: linear-gradient(135deg, #fbe3e8, #f6d5dc);
+      padding: 0.4rem 1.05rem;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #f2c6d0;
+      box-shadow: 0 3px 8px rgba(180, 90, 110, 0.10);
+      white-space: nowrap;
     }
 
-    .section-title h2 {
+    /* ===== STICKERS ===== */
+    .stickers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      font-size: 1.55rem;
+      margin: 0.4rem 0 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .stickers span {
+      display: inline-block;
+      animation: bob 4s infinite ease-in-out;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.06));
+    }
+
+    .stickers span:nth-child(2) { animation-delay: 0.4s; }
+    .stickers span:nth-child(3) { animation-delay: 0.9s; }
+    .stickers span:nth-child(4) { animation-delay: 0.2s; }
+    .stickers span:nth-child(5) { animation-delay: 1.2s; }
+
+    /* ===== MESSAGE ===== */
+    .message {
+      font-size: 1rem;
+      color: #3a2830;
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .message p {
+      margin-bottom: 0.9rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(254, 247, 248, 0.96));
+      padding: 0.9rem 1.1rem;
+      border-radius: 24px;
+      box-shadow: 0 4px 12px rgba(90, 50, 60, 0.06);
+      border: 1px solid #f5e6e9;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .message p:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(90, 50, 60, 0.10);
+    }
+
+    .message p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ===== HIGHLIGHT ===== */
+    .highlight {
+      background: linear-gradient(135deg, #fdeef1, #e9f2e4);
+      border-left: 5px solid #c96b82;
+      font-weight: 600;
+      border-radius: 24px 14px 14px 24px;
+      padding: 0.95rem 1.05rem;
+      margin: 1.3rem 0;
+      font-size: 0.98rem;
+      word-wrap: break-word;
+      box-shadow: 0 6px 16px rgba(180, 90, 110, 0.10);
+      position: relative;
+      z-index: 1;
+      color: #3a2830;
+    }
+
+    .highlight i {
+      font-style: normal;
+      font-size: 1.15rem;
+      margin-right: 5px;
+    }
+
+    /* ===== PS ===== */
+    .ps {
+      font-size: 0.88rem;
+      color: #5c4a52;
+      margin-top: 1.5rem;
+      padding-top: 0.9rem;
+      border-top: 1px dashed #e8c9d0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .ps .dev-badge {
+      background: linear-gradient(135deg, #4a2733, #6b3646);
+      color: #fdf2f4;
+      padding: 0.25rem 0.85rem;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      box-shadow: 0 3px 8px rgba(90, 50, 60, 0.2);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-7px) rotate(3deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+
+    @keyframes bob {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      15% { transform: rotate(12deg); }
+      30% { transform: rotate(-6deg); }
+      45% { transform: rotate(8deg); }
+      60% { transform: rotate(-2deg); }
+      75% { transform: rotate(4deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .tiny-heart {
+      color: #c96b82;
+      opacity: 0.8;
+      font-size: 0.85rem;
+      margin-left: 2px;
+    }
+
+    .greeting {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0.2rem;
+      flex-wrap: wrap;
+    }
+
+    .greeting .wave {
+      animation: wave 2.2s infinite;
+      display: inline-block;
+      transform-origin: 70% 70%;
+      font-size: 1.2rem;
+    }
+
+    /* ===== RESPONSIVE TÉLÉPHONE ===== */
+    @media (max-width: 600px) {
+      body {
+        padding: 0.6rem;
+        padding-top: max(0.6rem, env(safe-area-inset-top));
+        padding-bottom: max(0.6rem, env(safe-area-inset-bottom));
+        align-items: flex-start;
+      }
+
+      .card {
+        border-radius: 34px 34px 28px 28px;
+        padding: 1.4rem 1.1rem 1.8rem;
+        box-shadow: 0 10px 30px rgba(90, 50, 60, 0.18);
+      }
+
+      .card::after {
         font-size: 1.8rem;
+        top: 12px;
+        right: 14px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 0.4rem;
+      }
+
+      .header h1 {
+        font-size: 1.85rem;
+      }
+
+      .header h1 span {
+        font-size: 1.7rem;
+      }
+
+      .signature {
+        font-size: 0.88rem;
+        padding: 0.3rem 0.95rem;
+      }
+
+      .stickers {
+        font-size: 1.35rem;
+        gap: 5px 9px;
+        margin: 0.3rem 0 0.9rem;
+      }
+
+      .message {
+        font-size: 0.96rem;
+      }
+
+      .message p {
+        padding: 0.8rem 0.95rem;
+        border-radius: 20px;
+        margin-bottom: 0.75rem;
+        font-size: 0.96rem;
+        line-height: 1.55;
+      }
+
+      .highlight {
+        font-size: 0.94rem;
+        padding: 0.85rem 0.95rem;
+        margin: 1.05rem 0;
+        border-radius: 20px 10px 10px 20px;
+      }
+
+      .ps {
+        font-size: 0.84rem;
+        margin-top: 1.25rem;
+        padding-top: 0.75rem;
+      }
+
+      .ps .dev-badge {
+        font-size: 0.72rem;
+        padding: 0.2rem 0.8rem;
+      }
     }
 
-    .vision-quote {
-        font-size: 1.2rem;
-    }
+    @media (max-width: 380px) {
+      .card {
+        padding: 1.15rem 0.85rem 1.5rem;
+        border-radius: 28px 28px 24px 24px;
+      }
 
-    .vision-text {
-        font-size: 1rem;
-    }
+      .header h1 {
+        font-size: 1.6rem;
+      }
 
-    /* --- Réorganisation du Diamond Network --- */
-    .diamond-network {
-        width: 100%;
-        height: auto;
-        padding: 15px;
-        background: linear-gradient(135deg, #ffe066, #ff6b6b);
-    }
+      .message p {
+        font-size: 0.92rem;
+        padding: 0.7rem 0.8rem;
+      }
 
-    .node, .center-node {
-        position: static;
-        transform: none;
-        margin: 10px auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .node {
-        width: 110px;
-        height: 110px;
+      .highlight {
         font-size: 0.9rem;
+      }
     }
 
-    .center-node {
-        width: 130px;
-        height: 130px;
-        font-size: 1rem;
+    @media (max-height: 500px) and (orientation: landscape) {
+      body {
+        align-items: flex-start;
+        padding: 0.5rem;
+      }
+      .card {
+        margin: 0.5rem auto;
+      }
     }
 
-    .arrows {
-        display: none; /* cache les lignes sur mobile */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
-
-    /* --- Footer --- */
-    .footer-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-
-    .footer-column {
-        margin-bottom: 20px;
-    }
-
-    /* --- Images et cartes --- */
-    .photo-card img {
-        height: 180px;
-    }
-}
-
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  </style>
 </head>
 <body>
-    <div class="bismillah-section">
-        <div class="container">
-            <p>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم</p>
-        </div>
+
+  <!-- ===== PHOTO EN ARRIÈRE-PLAN PLEIN ÉCRAN (remplace TA_PHOTO.jpg) ===== -->
+  <div class="bg-photo" aria-hidden="true"></div>
+  <div class="bg-overlay" aria-hidden="true"></div>
+
+  <div class="card">
+
+    <!-- En-tête -->
+    <div class="header">
+      <h1>
+        <span>😊</span> Hey, toi !
+      </h1>
+      <div class="signature">
+        <span>🌷</span> Nadjare <span class="tiny-heart">♡</span>
+      </div>
     </div>
 
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <span class="logo-icon">🌍</span>
-                <span>Nadjare Group</span>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#vision">Vision</a></li>
-                    <li><a href="#mission">Ce que je veux construit</a></li>
-                    <li><a href="#values">Valeurs</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://nadjare.github.io/cv/">Mon cv </a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Nadjare Group</h1>
-            <div class="slogan">Né pour Aider</div>
-            <p>"Je veux réussir pour aider, pas pour briller."</p>
-            <a href="#vision" class="cta-button"> Decouvrir ma vision</a>
-        </div>
-        
-    </section>
-
-    <section id="vision">
-    <div class="container">
-        <div class="section-title"><h2>Ma Vision</h2></div>
-        <div class="vision-content">
-            <blockquote class="vision-quote">"Je ne veux plus dire non à celui qui a besoin."</blockquote>
-            <p class="vision-text"><strong>Nadjare Group</strong> n'est pas juste un projet d'entreprise – c'est un <strong>rêve né de la compassion</strong>.</p>
-            <p class="vision-text">Le but principal : <strong>Aider de toutes mes forces, pour qu'aucun cœur autour de moi ne souffre du manque.</strong></p>
-            <p class="vision-text" style="font-family: 'Traditional Arabic', 'Scheherazade', serif; font-size: 1.5rem; text-align: center; margin-top: 20px;">
-                ﴿لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا﴾
-            </p>
-        </div>
+    <!-- Stickers -->
+    <div class="stickers">
+      <span>💻</span>
+      <span>✨</span>
+      <span>🌱</span>
+      <span>😅</span>
+      <span>❤️</span>
     </div>
-</section>
 
-<section class="aider-section">
-    <div class="container">
-        <h2>🤍 La Raison d’Être de Nadjare Group</h2>
-        <p>
-            🌟Ce projet est né <strong>pour الله</strong> avant tout — 
-            pour rendre grâce à tout ce qu’Il m’a donné et pour en faire le bien autour de moi. ✨
-        </p>
-        <p>
-            🌟Je veux <strong>effacer le manque d'argent </strong> dans la vie de ma mère 🤍, 
-            <strong>remercier mon oustaz</strong> pour tout son soutien 📖 , 
-            et <strong>soutenir les مسكينet les يتيم </strong> par mon travail et mes efforts. 🤲
-        </p>
-        <p>
-            🌟Ce rêve, je le construis aussi pour <strong>mon cercle d’équipe</strong>, 
-            afin que nous puissions <strong>grandir ensemble, réussir ensemble et prouver à ceux qui doutaient de nous que la persévérance finit toujours par parler d’elle-même.</p></strong>. 💪❤️
-        </p>
-        <div class="photo-gallery">
-            <div class="photo-card"><img src="photo1.jpg" alt="Groupe 1"></div>
-            <div class="photo-card"><img src="photo2.jpg" alt="Groupe 2"></div>
-            <div class="photo-card"><img src="photo3.jpg" alt="Groupe 3"></div>
-            <div class="photo-card"><img src="photo4.jpg" alt="Groupe 4"></div>
-            <div class="photo-card"><img src="photo5.jpg" alt="Groupe 5"></div>
-            <div class="photo-card"><img src="photo6.jpg" alt="Groupe 6"></div>
-            <div class="photo-card"><img src="photo7.jpg" alt="Groupe 7"></div>
-            <div class="photo-card"><img src="photo8.jpg" alt="Groupe 8"></div>
-            <div class="photo-card"><img src="photo9.jpg" alt="Groupe 9"></div>
-            <div class="photo-card"><img src="photo10.jpg" alt="Groupe 10"></div>
-            <div class="photo-card"><img src="photo11.jpg" alt="Groupe 11"></div>
-            <div class="photo-card"><img src="photo12.jpg" alt="Groupe 12"></div>
-        </div>
-</section>
+    <!-- Message -->
+    <div class="message">
+      <p>
+        <span class="greeting">
+          <span class="wave">👋</span> <strong>Coucou !</strong> 😊
+        </span>
+        Tu dois sûrement te demander pourquoi je t'envoie un lien au lieu d'un simple message WhatsApp. 😂
+      </p>
 
+      <p>
+        Eh bien, disons que je suis un gars qui aime l'informatique 💻. Alors, quand j'ai quelque chose à dire, pourquoi ne pas utiliser ce que je sais faire le mieux ? Kkkkk 😅❤️
+      </p>
 
-  <section id="mission" class="mission">
-    <div class="container">
-        <div class="section-title"><h2>Ce que je veux construire</h2></div>
-        <div class="mission-grid">
-            <div class="mission-card">
-                <div class="mission-icon"><i class="fas fa-laptop-code"></i></div>
-                <h3>Technologie → Nadjare Tech</h3>
-                <p>Je veux créer des sites web et des services réseaux par passion et par lien avec mes études, tout en bâtissant une source de revenus solides et durables à partir de ce savoir-faire.</p>
+      <p>
+        Pour être honnête, je te vois souvent, mais je n'ai jamais vraiment eu l'occasion de venir discuter avec toi. Dimanche, j'ai finalement eu le courage de te demander ton numéro. Et puisque tu me l'as donné, je me suis dit que ce serait une bonne occasion de faire un premier petit pas. 🙈✨
+      </p>
 
-            </div>
-            <div class="mission-card">
-                <div class="mission-icon"><i class="fas fa-map-marked-alt"></i></div>
-                <h3>Tourisme → Mada Royale Trip</h3>
-                <p>Je veux faire de Mada Royale Trip une agence différente de toutes les autres, en offrant aux voyageurs la possibilité de voir et de découvrir plus que ce que proposent les agences classiques.</p>
+      <p>
+        Ce qui m'intrigue chez toi, c'est ce côté calme et gentil que tu sembles avoir. Mais je sais aussi que voir quelqu'un de loin ne suffit pas pour vraiment le connaître. 😊
+      </p>
 
-            </div>
-            <div class="mission-card">
-                <div class="mission-icon"><i class="fas fa-egg"></i></div>
-                <h3>Agriculture → Nadjare Poul’Tech</h3>
-                <p>e veux développer Nadjare Poul'Tech en un grand poulailler moderne, capable de produire à grande échelle pour offrir un meilleur rendement. Mon but est de créer une source durable de revenus qui me permettra d’aider davantage de personnes autour de moi.</p>
-
-            </div>
-            <div class="mission-card">
-                <div class="mission-icon"><i class="fas fa-hotel"></i></div>
-                <h3>Hôtellerie → Nadjare Lodge</h3>
-                <p>Je veux créer un hôtel accueillant les touristes avec confort et hospitalité, tout en générant des emplois locaux.</p>
-            </div>
-            <div class="mission-card">
-                <div class="mission-icon"><i class="fas fa-book-open"></i></div>
-                <h3>Développement personnel</h3>
-                <p>Je veux étudier le Coran, apprendre des langues et me discipliner pour devenir une personne complète et épanouie, capable d’aider les autres.</p>
-            </div>
-        </div>
+      <p>
+        J'aimerais donc découvrir la personne que tu es réellement : ce que tu aimes, tes rêves, tes ambitions et ta façon de voir la vie. 🌱🌍
+      </p>
     </div>
-</section>
 
-    <section class="nadjare-diamond">
-    <div class="container">
-        <h2 style="text-align:center; color:#ff4d4d;">Nadjare Group – Cercle Vertueux</h2>
-        <div class="diamond-network">
-
-            <!-- Noeuds -->
-            <div class="node dev">
-                <i class="fas fa-book-open"></i>
-                <span>Développement personnel</span>
-            </div>
-            <div class="node tech">
-                <i class="fas fa-laptop-code"></i>
-                <span>Nadjare Tech</span>
-            </div>
-            <div class="node agri">
-                <i class="fas fa-egg"></i>
-                <span>Poul'Tech</span>
-            </div>
-            <div class="node tour">
-                <i class="fas fa-map-marked-alt"></i>
-                <span>Mada Royale Trip</span>
-            </div>
-            <div class="node hotel">
-                <i class="fas fa-hotel"></i>
-                <span>Nadjare Lodge</span>
-            </div>
-
-            <!-- Centre -->
-            <div class="center-node">
-                <h3>Nadjare Group</h3>
-            </div>
-
-            <!-- Flèches -->
-            <svg class="arrows" width="600" height="600">
-                <defs>
-                    <marker id="arrowhead" markerWidth="10" markerHeight="7"
-                            refX="0" refY="3.5" orient="auto">
-                        <polygon points="0 0, 10 3.5, 0 7" fill="#ff4d4d"/>
-                    </marker>
-                </defs>
-                <line x1="100" y1="500" x2="300" y2="300" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <line x1="300" y1="300" x2="500" y2="500" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <line x1="500" y1="500" x2="300" y2="100" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <line x1="300" y1="100" x2="100" y2="100" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-                <line x1="100" y1="100" x2="100" y2="500" stroke="#ff4d4d" stroke-width="2" marker-end="url(#arrowhead)"/>
-            </svg>
-
-        </div>
+    <div class="highlight">
+      <i>🚀</i> Personnellement, j'aime les personnes qui ont des objectifs, qui veulent avancer et qui cherchent à construire quelque chose de bien pour leur avenir. C'est quelque chose qui compte beaucoup pour moi.
     </div>
-</section>
 
+    <div class="message">
+      <p>
+        Et qui sait ? Peut-être qu'une simple conversation peut nous permettre de découvrir de belles choses l'un sur l'autre. 😉
+      </p>
+      <p>
+        Pas de pression, pas de grandes promesses… juste l'envie de mieux te connaître. 🌸
+      </p>
+      <p style="font-weight: 600; background: linear-gradient(135deg, #fde3e8, #e3ede0); border-color: #f0c6d0;">
+        Alors, on fait connaissance ? 😄💬
+      </p>
+    </div>
 
+    <div class="ps">
+      <span class="dev-badge">💻 P.-S.</span>
+      J'espère que tu apprécies mon petit travail de développeur. J'ai peut-être un peu trop réfléchi avant de cliquer sur « envoyer ». Kkkkk 😂💻❤️
+    </div>
 
-
-    <section id="values" class="values">
-        <div class="container">
-            <div class="section-title"><h2>Nos Valeurs Humaines</h2></div>
-            <div class="values-grid">
-                <div class="value-card"><div class="value-icon"><i class="fas fa-heart"></i></div><h3>Compassion</h3><p>Aider sans attendre en retour.</p></div>
-                <div class="value-card"><div class="value-icon"><i class="fas fa-pray"></i></div><h3>Foi</h3><p>Confiance en Dieu dans chaque pas.</p></div>
-                <div class="value-card"><div class="value-icon"><i class="fas fa-hands-helping"></i></div><h3>Travail</h3><p>Réussir par l'effort, apprendre toujours.</p></div>
-                <div class="value-card"><div class="value-icon"><i class="fas fa-share-alt"></i></div><h3>Partage</h3><p>Donner sans limites.</p></div>
-                <div class="value-card"><div class="value-icon"><i class="fas fa-seedling"></i></div><h3>Espoir</h3><p>Gardez espoir même dans les moments difficiles.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Nadjare Group</h3>
-                    <p>"Né pour Aider"</p>
-                    <p>Je veux réussir pour aider, pas pour briller.</p>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact</h3>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:hajahabibeabdou@gmail.com">hajahabibeabdou@gmail.com</a></p>
-                    <p><i class="fas fa-phone"></i> <a href="https://wa.me/261323962286" target="_blank">+261 32 39 622 86 (WhatsApp)</a></p>
-                    <p><i class="fab fa-facebook"></i> <a href="https://facebook.com/HajaNadjare" target="_blank">Haja Nadjare</a></p>
-               
+    <div style="margin-top: 0.9rem; font-size: 0.7rem; color: #b9a0a8; text-align: right; opacity: 0.75;">
+      *fait avec des 🌱 et du code*
+    </div>
+  </div>
+</body>
+</html>
